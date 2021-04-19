@@ -52,6 +52,7 @@ function counter2() {
   return count++;
 }
 
+/*TASK 2*/
 
 /* ⚾️⚾️⚾️ Task 2: inning() ⚾️⚾️⚾️
 Use the inning function below to do the following:

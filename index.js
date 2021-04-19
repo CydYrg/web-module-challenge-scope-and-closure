@@ -31,10 +31,16 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   counter1 is using a closure function  but counter2 is not
   
   2. Which of the two uses a closure? How can you tell?
-
+counter1 is using closure
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better? 
+     
+     In JavaScript, closures are the primary mechanism used to enable data privacy.
+     When you use closures for data privacy, the enclosed variables are only in scope within
+     the containing (outer) function. You can’t get at the data from an outside scope except through
+     the object’s privileged methods. In JavaScript, any exposed method defined within the closure
+     scope is privileged.
 */
 
 // counter1 code
@@ -165,9 +171,9 @@ function scoreboard(getInningScoreCB, inningCB, nameOfInningCB) {
     score.push(`Inning ${i+1} : Away ${inningScore.Away} - Home ${inningScore.Home}`);
   }
   if(home === away){
-   scores.push (`This game will require extra innings: ${away} - ${home}`);
+   score.push (`This game will require extra innings: ${away} - ${home}`);
   }
-  return scores;
+  return score;
 }
 console.log(scoreboard(getInningScore,inning,3));
 
